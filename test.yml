@@ -1,46 +1,28 @@
-avr:
+native:
+native32:
 
-atmega:
-    parents: [avr]
-atmegaxx0_1:
-    parents: [atmega]
-atmegax8:
-    parents: [atmega]
+avr:
+atmega: [avr]
+atmegaxx0_1: [atmega]
+atmegax8: [atmega]
 
 arm:
-
-cortex_m4:
-    parents: [arm]
+cortex: [arm]
+cortex_m: [cortex]
+cortex_m4: [cortex_m]
 
 stm32:
-    parents: [arm]
-stm32f4:
-    parents: [stm32, cortex_m4]
+stm32f4: [stm32, cortex_m4]
 
-atmega2560:
-    type: mcu
-    parents: [atmegaxx0_1]
-atmega328p:
-    type: mcu
-    parents: [atmegax8]
-stm32f407vg:
-    type: mcu
-    parents: [stm32f4]
+mcu:
+atmega2560: [mcu, atmegaxx0_1]
+atmega328p: [mcu, atmegax8]
+stm32f407vg: [mcu, stm32f4]
 
 discovery:
 arduino:
 
-arduino_mega:
-    type: board
-    mcu: atmega2560
-    parents: [arduino]
-arduino_uno:
-    type: board
-    mcu: atmega328p
-    parents: [arduino]
-
-stm32f4_discovery:
-    type: board
-    mcu: stm32f407vg
-    parents: [discovery]
-
+board:
+arduino-mega2560: [board, arduino, atmega2560]
+arduino-uno: [board, arduino, atmega328p]
+stm32f4discovery: [board, discovery, stm32f407vg]
