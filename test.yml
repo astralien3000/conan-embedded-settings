@@ -10,19 +10,44 @@ arm:
 cortex: [arm]
 cortex_m: [cortex]
 cortex_m4: [cortex_m]
+cortex_m0: [cortex_m]
+cortex_m3: [cortex_m]
+cortex_m0plus: [cortex_m]
 
 stm32:
 stm32f4: [stm32, cortex_m4]
+stm32f3: [stm32, cortex_m4]
+stm32f0: [stm32, cortex_m0]
+
+sam:
+sam3: [sam, cortex_m3]
+samd21: [sam, cortex_m0plus]
+saml21: [sam, cortex_m0plus]
 
 mcu:
 atmega2560: [mcu, atmegaxx0_1]
 atmega328p: [mcu, atmegax8]
 stm32f407vg: [mcu, stm32f4]
-
-discovery:
-arduino:
+stm32f303vc: [mcu, stm32f3]
+stm32f051r8: [mcu, stm32f0]
+sam3x8e: [mcu, sam3]
+samd21g18a: [mcu, samd21]
+samr21g18a: [mcu, samd21]
+saml21j18a: [mcu, saml21]
 
 board:
+
+arduino:
 arduino-mega2560: [board, arduino, atmega2560]
 arduino-uno: [board, arduino, atmega328p]
+arduino-due: [board, arduino, sam3x8e]
+arduino-zero: [board, arduino, samd21g18a]
+
+discovery:
 stm32f4discovery: [board, discovery, stm32f407vg]
+stm32f3discovery: [board, discovery, stm32f303vc]
+stm32f0discovery: [board, discovery, stm32f051r8]
+
+xpro:
+samr21-xpro: [board, xpro, samr21g18a]
+saml21-xpro: [board, xpro, saml21j18a]
